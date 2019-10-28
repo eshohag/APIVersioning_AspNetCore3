@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using UMS.Entities.Students;
 
-namespace URLPathBased_APIVersioning.Controllers
+namespace MediaType_APIVersioning.Controllers
 {
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
     {

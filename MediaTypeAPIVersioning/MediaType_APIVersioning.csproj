@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0-preview8.19405.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UMS.Entities">
+      <HintPath>..\..\UMS.Web.API\UMS.Entities\bin\Release\netcoreapp3.0\UMS.Entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

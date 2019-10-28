@@ -5,16 +5,12 @@ using UMS.Entities.Students;
 
 namespace APIVersioning.Controllers
 {
-    //[ApiVersion("1.0")]
-    //[ApiVersion("2.0")]
-    //[ApiVersion("3.0")]
     [Route("api/[controller]")]
     //[Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
     {
-        [MapToApiVersion("1.0")]
-        [HttpGet]
+        [HttpGet, MapToApiVersion("1.0")]
         public IEnumerable<Student> Student1()
         {
             return new List<Student>() {
@@ -22,8 +18,7 @@ namespace APIVersioning.Controllers
             };
         }
 
-        [MapToApiVersion("2.0")]
-        [HttpGet]
+        [HttpGet, MapToApiVersion("2.0")]
         public IEnumerable<Student> Student2()
         {
             return new List<Student>() {
@@ -32,8 +27,7 @@ namespace APIVersioning.Controllers
             };
         }
 
-        [MapToApiVersion("3.0")]
-        [HttpGet]
+        [HttpGet, MapToApiVersion("3.0")]
         public IEnumerable<Student> Student3()
         {
             return new List<Student>() {

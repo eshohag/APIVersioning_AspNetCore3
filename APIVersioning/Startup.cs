@@ -24,34 +24,21 @@ namespace APIVersioning
             services.AddMvcCore();
             services.AddApiVersioning(o =>
             {
+                #region CombineVersionReader
+                o.ApiVersionReader = ApiVersionReader.Combine(
+                    new QueryStringApiVersionReader(),
+                    new HeaderApiVersionReader()
+                    {
+                        Headers = { "api-version" }
+                    });
+                #endregion
+
                 o.ReportApiVersions = true;
                 o.AssumeDefaultVersionWhenUnspecified = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0);
 
-                #region HeaderApiVersionReader
-                //o.ApiVersionReader = new HeaderApiVersionReader("api-version");
-
-                #endregion
-
-                #region QueryStringApiVersionReader
-                // svc?api-version=2.0
-                //o.ApiVersionReader = new QueryStringApiVersionReader();
-
-                // svc?v=2.0
-                //o.ApiVersionReader = new QueryStringApiVersionReader("v");
-                #endregion
-
-                #region CombineVersionReader
-                //o.ApiVersionReader = ApiVersionReader.Combine(
-                //    new QueryStringApiVersionReader(),
-                //    new HeaderApiVersionReader()
-                //    {
-                //        Headers = { "api-version" }
-                //    });
-                #endregion
-
                 #region VersionSupportedController
-                o.Conventions.Controller<StudentController>().HasApiVersion(new ApiVersion(3, 1));
+                o.Conventions.Controller<StudentController>().HasApiVersion(new ApiVersion(3,1));
 
                 #endregion
             });
@@ -62,6 +49,7 @@ namespace APIVersioning
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseApiVersioning();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

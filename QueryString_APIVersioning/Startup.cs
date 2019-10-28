@@ -57,7 +57,7 @@ namespace QueryString_APIVersioning
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseApiVersioning();
             app.UseHttpsRedirection();
 
             app.UseRouting();
