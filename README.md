@@ -1,4 +1,4 @@
-<h2>Several API versioning methods are supported:<h2/>
+<h2>Several API versioning methods are supported in ASP.NET Core 3.0:</h2>
   
 - [x] Query String Versioning (default)
 - [x] URL Path Versioning
