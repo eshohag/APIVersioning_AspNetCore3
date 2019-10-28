@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using QueryString_APIVersioning.Controllers;
 
 namespace QueryString_APIVersioning
 {
@@ -26,6 +28,26 @@ namespace QueryString_APIVersioning
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMvc();
+            services.AddMvcCore();
+            services.AddApiVersioning(o =>
+            {
+                o.ReportApiVersions = true;
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+
+                #region QueryStringApiVersionReader
+                //https://localhost:44358/api/student?api-version=3
+                o.ApiVersionReader = new QueryStringApiVersionReader();
+
+                //https://localhost:44358/api/student?v=3
+                o.ApiVersionReader = new QueryStringApiVersionReader("v");
+                #endregion
+
+                #region VersionSupportedController
+                o.Conventions.Controller<StudentController>().HasApiVersion(new ApiVersion(3, 1));
+                #endregion
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
