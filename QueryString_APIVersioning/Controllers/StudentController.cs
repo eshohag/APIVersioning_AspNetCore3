@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using UMS.Entities.Students;
 
 namespace QueryString_APIVersioning.Controllers
 {
-
     //[ApiVersion("1.0")]
     //[ApiVersion("2.0")]
     //[ApiVersion("3.0")]
