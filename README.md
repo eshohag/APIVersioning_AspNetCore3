@@ -1,14 +1,11 @@
 **Several API versioning methods are supported:**
 
-- [x]Query String Versioning (default)
+- [x] Query String Versioning (default)
 - [x] URL Path Versioning
 - [x] Header Versioning
 - [x] Media Type Versioning
-
-
-
-
-
+\
+\
 **Initial Requirnments for API Versioning:**
 
 - [x] ASP.NET Core 3.0
