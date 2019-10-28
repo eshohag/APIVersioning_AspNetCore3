@@ -5,7 +5,6 @@
 - [x] Header Versioning
 - [x] Media Type Versioning
 
-<br/>
 
 <h2>Initial Requirnments for API Versioning:</h2>
 
