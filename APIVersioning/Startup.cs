@@ -26,16 +26,22 @@ namespace APIVersioning
             {
                 #region CombineVersionReader
                 o.ApiVersionReader = ApiVersionReader.Combine(
+                    //https://localhost:44358/api/student?api-version=3
                     new QueryStringApiVersionReader(),
-                    new HeaderApiVersionReader()
-                    {
-                        Headers = { "api-version" }
-                    });
+                    //https://localhost:44358/api/student?v=3
+                    new QueryStringApiVersionReader("v")
+
+                    //new HeaderApiVersionReader("api-version"),
+                    //// Content-Type: application/json;v=2.0
+                    //new MediaTypeApiVersionReader(),
+                    //// Content-Type: application/json;version=2.0
+                    //new MediaTypeApiVersionReader("version")
+                    );
                 #endregion
 
                 o.ReportApiVersions = true;
                 o.AssumeDefaultVersionWhenUnspecified = true;
-                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.DefaultApiVersion = new ApiVersion(3, 0);
 
                 #region VersionSupportedController
                 o.Conventions.Controller<StudentController>().HasApiVersion(new ApiVersion(3,1));
