@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIVersioning", "APIVersioning\APIVersioning.csproj", "{10B7F77B-E7D8-442C-ADCB-DEC7C99D4122}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIVersioning", "APIVersioning\APIVersioning.csproj", "{10B7F77B-E7D8-442C-ADCB-DEC7C99D4122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryString_APIVersioning", "QueryString_APIVersioning\QueryString_APIVersioning.csproj", "{D02BFE57-4900-4863-BC33-4563391910D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URLPathBased_APIVersioning", "URLPathBased_APIVersioning\URLPathBased_APIVersioning.csproj", "{899BF375-9F15-4067-BAD9-189BA62FF067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHeaderBased_APIVersioning", "HttpHeaderBased_APIVersioning\HttpHeaderBased_APIVersioning.csproj", "{3DB3020D-107D-4BAE-BA36-E6003757155B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{356782A7-985C-4DF5-BB18-96CF3262B6E3}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,18 @@ Global
 		{10B7F77B-E7D8-442C-ADCB-DEC7C99D4122}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10B7F77B-E7D8-442C-ADCB-DEC7C99D4122}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10B7F77B-E7D8-442C-ADCB-DEC7C99D4122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D02BFE57-4900-4863-BC33-4563391910D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02BFE57-4900-4863-BC33-4563391910D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02BFE57-4900-4863-BC33-4563391910D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02BFE57-4900-4863-BC33-4563391910D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899BF375-9F15-4067-BAD9-189BA62FF067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899BF375-9F15-4067-BAD9-189BA62FF067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899BF375-9F15-4067-BAD9-189BA62FF067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899BF375-9F15-4067-BAD9-189BA62FF067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB3020D-107D-4BAE-BA36-E6003757155B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB3020D-107D-4BAE-BA36-E6003757155B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB3020D-107D-4BAE-BA36-E6003757155B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB3020D-107D-4BAE-BA36-E6003757155B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
